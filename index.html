@@ -1,0 +1,569 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LỚP 8/8 | Our Memories</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f5f2eb;
+    color: #172b38;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.topbar {
+    background: #172b38;
+    color: #e9d6ad;
+    text-align: center;
+    padding: 10px;
+    font-size: 11px;
+    letter-spacing: 4px;
+}
+
+header {
+    height: 85px;
+    padding: 0 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f5f2eb;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid #ded8cb;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #b4955b;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: #172b38;
+    text-decoration: none;
+    font-size: 13px;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: #b4955b;
+}
+
+.hero {
+    min-height: 570px;
+    padding: 100px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    background: #172b38;
+    color: white;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 600px;
+    animation: slideIn 1s ease;
+}
+
+.eyebrow {
+    color: #d8b978;
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(48px, 7vw, 82px);
+    font-weight: 500;
+    line-height: 1.12;
+}
+
+.hero h1 em {
+    color: #d8b978;
+}
+
+.hero p {
+    color: #c2cbd0;
+    line-height: 1.9;
+    margin-top: 25px;
+    max-width: 460px;
+    font-size: 14px;
+}
+
+.hero-button {
+    display: inline-block;
+    margin-top: 35px;
+    padding: 15px 25px;
+    background: #d8b978;
+    color: #172b38;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 1px;
+    transition: .3s;
+}
+
+.hero-button:hover {
+    background: white;
+    transform: translateY(-4px);
+}
+
+.hero-decoration {
+    width: 320px;
+    height: 400px;
+    border: 1px solid #b4955b;
+    padding: 14px;
+    transform: rotate(4deg);
+    animation: float 4s ease-in-out infinite;
+}
+
+.hero-decoration div {
+    height: 100%;
+    background: linear-gradient(145deg, #344d5d, #b4955b);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 35px;
+    color: #fff;
+}
+
+.section {
+    padding: 100px 9%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-heading span {
+    color: #a58a58;
+    letter-spacing: 4px;
+    font-size: 11px;
+}
+
+.section-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(35px, 5vw, 50px);
+    font-weight: 500;
+    margin-top: 17px;
+}
+
+.section-heading p {
+    color: #777;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 55px 35px;
+}
+
+.gallery-card {
+    background: white;
+    padding: 13px;
+    box-shadow: 0 10px 35px #172b3810;
+    transition: .4s;
+    opacity: 0;
+    transform: translateY(45px);
+}
+
+.gallery-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.gallery-card:hover {
+    transform: translateY(-9px);
+    box-shadow: 0 20px 45px #172b3820;
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 300px;
+    display: block;
+    object-fit: cover;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.gallery-card img:hover {
+    filter: brightness(.85);
+}
+
+.gallery-card .number {
+    color: #b4955b;
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin: 24px 20px 10px;
+}
+
+.gallery-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 27px;
+    font-weight: 500;
+    margin: 0 20px;
+}
+
+.gallery-card p {
+    color: #777;
+    font-size: 13px;
+    line-height: 1.9;
+    margin: 13px 20px 25px;
+}
+
+.gallery-card:last-child {
+    grid-column: 1 / -1;
+}
+
+.gallery-card:last-child img {
+    height: 420px;
+}
+
+.quote {
+    background: #e9e3d6;
+    text-align: center;
+    padding: 100px 15%;
+}
+
+.quote span {
+    color: #aa8b51;
+    font-size: 45px;
+    font-family: 'Playfair Display', serif;
+}
+
+.quote h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(25px, 4vw, 40px);
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.quote p {
+    margin-top: 20px;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #82765e;
+}
+
+footer {
+    background: #172b38;
+    color: white;
+    padding: 45px 8%;
+    text-align: center;
+}
+
+footer h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    color: #d8b978;
+}
+
+footer p {
+    color: #b9c2c8;
+    font-size: 12px;
+    margin-top: 12px;
+}
+
+.viewer {
+    position: fixed;
+    inset: 0;
+    background: #09131fee;
+    z-index: 30;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+}
+
+.viewer.active {
+    display: flex;
+}
+
+.viewer img {
+    max-width: 90%;
+    max-height: 85vh;
+    object-fit: contain;
+    animation: zoomIn .3s ease;
+}
+
+.close {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: rotate(4deg) translateY(0);
+    }
+    50% {
+        transform: rotate(4deg) translateY(-15px);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 750px) {
+    header {
+        padding: 0 5%;
+        height: auto;
+        min-height: 75px;
+        flex-wrap: wrap;
+        gap: 15px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    nav {
+        width: 100%;
+        justify-content: center;
+        gap: 17px;
+    }
+
+    nav a {
+        font-size: 11px;
+    }
+
+    .hero {
+        padding: 75px 8%;
+    }
+
+    .hero-decoration {
+        display: none;
+    }
+
+    .section {
+        padding: 75px 6%;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .gallery-card:last-child {
+        grid-column: auto;
+    }
+
+    .gallery-card img,
+    .gallery-card:last-child img {
+        height: 250px;
+    }
+
+    .quote {
+        padding: 75px 8%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">A CLASS FULL OF MEMORIES</div>
+
+<header>
+    <div class="logo">LỚP <span>8/8</span></div>
+    <nav>
+        <a href="#home">TRANG CHỦ</a>
+        <a href="#memories">KỶ NIỆM</a>
+        <a href="#footer">LIÊN HỆ</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <div class="eyebrow">WELCOME TO OUR CLASS</div>
+        <h1>Một thời<br><em>thanh xuân.</em></h1>
+        <p>
+            Nơi lưu giữ những khoảnh khắc đẹp nhất,
+            những nụ cười và hành trình trưởng thành
+            của tập thể lớp chúng mình.
+        </p>
+        <a href="#memories" class="hero-button">KHÁM PHÁ KỶ NIỆM ↗</a>
+    </div>
+
+    <div class="hero-decoration">
+        <div>OUR<br>MEMORIES</div>
+    </div>
+</section>
+
+<section class="section" id="memories">
+    <div class="section-heading">
+        <span>OUR STORY · 2026</span>
+        <h2>Những mảnh ghép kỷ niệm</h2>
+        <p>Năm khoảnh khắc, năm câu chuyện, một tập thể.</p>
+    </div>
+
+    <div class="gallery">
+
+        <article class="gallery-card">
+            <img src="images/anh1.jpg" alt="Khoảnh khắc tập thể">
+            <div class="number">01 / TOGETHER</div>
+            <h3>Chúng ta của ngày ấy</h3>
+            <p>
+                Đây là nơi bạn viết nội dung cho bức ảnh đầu tiên.
+                Hãy kể về những người bạn, những tiếng cười
+                và khoảnh khắc đáng nhớ của tập thể.
+            </p>
+        </article>
+
+        <article class="gallery-card">
+            <img src="images/anh2.jpg" alt="Khoảnh khắc học tập">
+            <div class="number">02 / LEARNING</div>
+            <h3>Những giờ học đáng nhớ</h3>
+            <p>
+                Viết về những tiết học, những lần cùng nhau
+                giải bài tập và những kỷ niệm vui trong lớp.
+            </p>
+        </article>
+
+        <article class="gallery-card">
+            <img src="images/anh3.jpg" alt="Hoạt động ngoại khóa">
+            <div class="number">03 / EXPERIENCE</div>
+            <h3>Hành trình trải nghiệm</h3>
+            <p>
+                Kể lại những chuyến đi, hoạt động ngoại khóa
+                và những điều mới mẻ mà cả lớp đã cùng khám phá.
+            </p>
+        </article>
+
+        <article class="gallery-card">
+            <img src="images/anh4.jpg" alt="Hoạt động tập thể">
+            <div class="number">04 / TEAMWORK</div>
+            <h3>Khi chúng ta đồng lòng</h3>
+            <p>
+                Ghi lại những lần cùng nhau cố gắng,
+                hỗ trợ nhau và tạo nên thành quả chung.
+            </p>
+        </article>
+
+        <article class="gallery-card">
+            <img src="images/anh5.jpg" alt="Kỷ niệm cuối năm">
+            <div class="number">05 / FOREVER</div>
+            <h3>Thanh xuân còn mãi</h3>
+            <p>
+                Một lời nhắn gửi đến tất cả thành viên:
+                dù mai này mỗi người một con đường,
+                những năm tháng này vẫn luôn đáng nhớ.
+            </p>
+        </article>
+
+    </div>
+</section>
+
+<section class="quote">
+    <span>“</span>
+    <h2>Điều đẹp nhất không phải là chúng ta đã đi bao xa, mà là đã đi cùng nhau như thế nào.</h2>
+    <p>OUR CLASS · OUR MEMORIES · OUR STORY</p>
+</section>
+
+<footer id="footer">
+    <h2>LỚP 8/8</h2>
+    <p>Một tập thể · Một hành trình · Ngàn kỷ niệm</p>
+    <p>© 2026 OUR CLASS</p>
+</footer>
+
+<div class="viewer" id="viewer">
+    <button class="close" id="closeViewer">×</button>
+    <img id="viewerImage" src="" alt="Ảnh phóng to">
+</div>
+
+<script>
+const cards = document.querySelectorAll(".gallery-card");
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
+}, {
+    threshold: 0.15
+});
+
+cards.forEach((card) => {
+    observer.observe(card);
+});
+
+const viewer = document.getElementById("viewer");
+const viewerImage = document.getElementById("viewerImage");
+const closeViewer = document.getElementById("closeViewer");
+
+document.querySelectorAll(".gallery-card img").forEach((img) => {
+    img.addEventListener("click", () => {
+        viewerImage.src = img.src;
+        viewer.classList.add("active");
+    });
+});
+
+closeViewer.addEventListener("click", () => {
+    viewer.classList.remove("active");
+});
+
+viewer.addEventListener("click", (event) => {
+    if (event.target === viewer) {
+        viewer.classList.remove("active");
+    }
+});
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+        viewer.classList.remove("active");
+    }
+});
+</script>
+
+</body>
+</html>
