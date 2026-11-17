@@ -2,581 +2,304 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LỚP 8/8 | Our Memories</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    background: #f5f2eb;
-    color: #172b38;
-    font-family: 'DM Sans', sans-serif;
-}
-
-.topbar {
-    background: #172b38;
-    color: #e9d6ad;
-    text-align: center;
-    padding: 10px;
-    font-size: 11px;
-    letter-spacing: 4px;
-}
-
-header {
-    height: 85px;
-    padding: 0 8%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #f5f2eb;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    border-bottom: 1px solid #ded8cb;
-}
-
-.logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 25px;
-    letter-spacing: 2px;
-}
-
-.logo span {
-    color: #b4955b;
-}
-
-nav {
-    display: flex;
-    gap: 30px;
-}
-
-nav a {
-    color: #172b38;
-    text-decoration: none;
-    font-size: 13px;
-    transition: .3s;
-}
-
-nav a:hover {
-    color: #b4955b;
-}
-
-.hero {
-    min-height: 570px;
-    padding: 100px 10%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-    background: #172b38;
-    color: white;
-    overflow: hidden;
-}
-
-.hero-content {
-    max-width: 600px;
-    animation: slideIn 1s ease;
-}
-
-.eyebrow {
-    color: #d8b978;
-    font-size: 11px;
-    letter-spacing: 4px;
-    margin-bottom: 25px;
-}
-
-.hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(48px, 7vw, 82px);
-    font-weight: 500;
-    line-height: 1.12;
-}
-
-.hero h1 em {
-    color: #d8b978;
-}
-
-.hero p {
-    color: #c2cbd0;
-    line-height: 1.9;
-    margin-top: 25px;
-    max-width: 460px;
-    font-size: 14px;
-}
-
-.hero-button {
-    display: inline-block;
-    margin-top: 35px;
-    padding: 15px 25px;
-    background: #d8b978;
-    color: #172b38;
-    text-decoration: none;
-    font-size: 12px;
-    letter-spacing: 1px;
-    transition: .3s;
-}
-
-.hero-button:hover {
-    background: white;
-    transform: translateY(-4px);
-}
-
-.hero-decoration {
-    width: 320px;
-    height: 400px;
-    border: 1px solid #b4955b;
-    padding: 14px;
-    transform: rotate(4deg);
-    animation: float 4s ease-in-out infinite;
-}
-
-.hero-decoration div {
-    height: 100%;
-    background: linear-gradient(145deg, #344d5d, #b4955b);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Playfair Display', serif;
-    font-size: 35px;
-    color: #fff;
-}
-
-.section {
-    padding: 100px 9%;
-}
-
-.section-heading {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.section-heading span {
-    color: #a58a58;
-    letter-spacing: 4px;
-    font-size: 11px;
-}
-
-.section-heading h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(35px, 5vw, 50px);
-    font-weight: 500;
-    margin-top: 17px;
-}
-
-.section-heading p {
-    color: #777;
-    font-size: 14px;
-    margin-top: 15px;
-}
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 55px 35px;
-}
-
-.gallery-card {
-    background: white;
-    padding: 13px;
-    box-shadow: 0 10px 35px #172b3810;
-    transition: .4s;
-    opacity: 0;
-    transform: translateY(45px);
-}
-
-.gallery-card.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.gallery-card:hover {
-    transform: translateY(-9px);
-    box-shadow: 0 20px 45px #172b3820;
-}
-
-.gallery-card img {
-    width: 100%;
-    height: 300px;
-    display: block;
-    object-fit: cover;
-    cursor: pointer;
-    transition: .5s;
-}
-
-.gallery-card img:hover {
-    filter: brightness(.85);
-}
-
-.gallery-card .number {
-    color: #b4955b;
-    font-size: 11px;
-    letter-spacing: 3px;
-    margin: 24px 20px 10px;
-}
-
-.gallery-card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 27px;
-    font-weight: 500;
-    margin: 0 20px;
-}
-
-.gallery-card p {
-    color: #777;
-    font-size: 13px;
-    line-height: 1.9;
-    margin: 13px 20px 25px;
-}
-
-.gallery-card:last-child {
-    grid-column: 1 / -1;
-}
-
-.gallery-card:last-child img {
-    height: 420px;
-}
-
-.quote {
-    background: #e9e3d6;
-    text-align: center;
-    padding: 100px 15%;
-}
-
-.quote span {
-    color: #aa8b51;
-    font-size: 45px;
-    font-family: 'Playfair Display', serif;
-}
-
-.quote h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(25px, 4vw, 40px);
-    font-weight: 500;
-    line-height: 1.5;
-}
-
-.quote p {
-    margin-top: 20px;
-    font-size: 11px;
-    letter-spacing: 3px;
-    color: #82765e;
-}
-
-footer {
-    background: #172b38;
-    color: white;
-    padding: 45px 8%;
-    text-align: center;
-}
-
-footer h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 30px;
-    color: #d8b978;
-}
-
-footer p {
-    color: #b9c2c8;
-    font-size: 12px;
-    margin-top: 12px;
-}
-
-.viewer {
-    position: fixed;
-    inset: 0;
-    background: #09131fee;
-    z-index: 30;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    padding: 25px;
-}
-
-.viewer.active {
-    display: flex;
-}
-
-.viewer img {
-    max-width: 90%;
-    max-height: 85vh;
-    object-fit: contain;
-    animation: zoomIn .3s ease;
-}
-
-.close {
-    position: absolute;
-    top: 25px;
-    right: 35px;
-    color: white;
-    font-size: 35px;
-    cursor: pointer;
-    background: none;
-    border: none;
-}
-
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateX(-40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes float {
-    0%, 100% {
-        transform: rotate(4deg) translateY(0);
-    }
-    50% {
-        transform: rotate(4deg) translateY(-15px);
-    }
-}
-
-@keyframes zoomIn {
-    from {
-        transform: scale(.8);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-@media (max-width: 750px) {
-    header {
-        padding: 0 5%;
-        height: auto;
-        min-height: 75px;
-        flex-wrap: wrap;
-        gap: 15px;
-        padding-top: 15px;
-        padding-bottom: 15px;
-    }
-
-    nav {
-        width: 100%;
-        justify-content: center;
-        gap: 17px;
-    }
-
-    nav a {
-        font-size: 11px;
-    }
-
-    .hero {
-        padding: 75px 8%;
-    }
-
-    .hero-decoration {
-        display: none;
-    }
-
-    .section {
-        padding: 75px 6%;
-    }
-
-    .gallery {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .gallery-card:last-child {
-        grid-column: auto;
-    }
-
-    .gallery-card img,
-    .gallery-card:last-child img {
-        height: 250px;
-    }
-
-    .quote {
-        padding: 75px 8%;
-    }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Báo điện tử tập thể lớp 8/8">
+    <title>8/8 NEWS - Báo điện tử học đường</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
-<div class="topbar">A CLASS FULL OF MEMORIES</div>
+<header class="header">
+    <div class="topbar">
+        <div class="container topbar-content">
+            <span id="currentDate">BÁO ĐIỆN TỬ HỌC ĐƯỜNG</span>
+            <span>ĐOÀN KẾT - TỰ TIN - SÁNG TẠO</span>
+        </div>
+    </div>
 
-<header>
-    <div class="logo">LỚP <span>8/8</span></div>
-    <nav>
-        <a href="#home">TRANG CHỦ</a>
-        <a href="#memories">KỶ NIỆM</a>
-        <a href="#footer">LIÊN HỆ</a>
-    </nav>
+    <div class="container header-main">
+        <a href="#" class="brand">
+            <div class="brand-logo">8/8</div>
+            <div>
+                <h1>8/8 <span>NEWS</span></h1>
+                <p>THE CLASS JOURNAL</p>
+            </div>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle">☰</button>
+
+        <nav id="mainNav">
+            <a href="#home">TRANG CHỦ</a>
+            <a href="#latest">TIN MỚI</a>
+            <a href="#study">HỌC TẬP</a>
+            <a href="#activities">HOẠT ĐỘNG</a>
+            <a href="#gallery">THƯ VIỆN ẢNH</a>
+        </nav>
+    </div>
 </header>
 
-<section class="hero" id="home">
-    <div class="hero-content">
-        <div class="eyebrow">WELCOME TO OUR CLASS</div>
-        <h1>Kỉ niệm<br><em>của lớp 8/8.</em></h1>
-        <p>
-           Hãy cùng xem lớp chúng mình có những kỉ niệm gì nhé!
-        </p>
-        <a href="#memories" class="hero-button">KHÁM PHÁ KỶ NIỆM ↗</a>
+<main id="home">
+
+    <div class="breaking">
+        <div class="container breaking-inner">
+            <span class="breaking-label">TIN NỔI BẬT</span>
+            <div class="breaking-track">
+                <span>Chào mừng bạn đến với 8/8 NEWS - Nơi lưu giữ những câu chuyện của chúng mình!</span>
+            </div>
+        </div>
     </div>
 
-    <div class="hero-decoration">
-        <div>LỚP 8/8<br>OUR MEMORY</div>
+    <section class="container hero-section">
+        <div class="section-heading">
+            <div>
+                <span class="eyebrow">WELCOME TO 8/8 NEWS</span>
+                <h2>TIN TỨC <span>HỌC ĐƯỜNG</span></h2>
+            </div>
+            <span class="edition">ẤN PHẨM ĐẶC BIỆT · 2026</span>
+        </div>
+
+        <div class="hero-grid">
+            <article class="hero-main article-card"
+                data-category="hoatdong"
+                data-title="Chào mừng đến với ngôi nhà chung 8/8"
+                data-image="images/banner.jpg"
+                data-description="Nơi lưu giữ những khoảnh khắc đáng nhớ, những hoạt động sôi nổi và hành trình trưởng thành của tập thể lớp 8/8.">
+                <img src="images/banner.jpg" alt="Tập thể lớp 8/8">
+                <div class="hero-overlay">
+                    <span class="category">TIN ĐẶC BIỆT</span>
+                    <h2>8/8 NEWS - CÙNG NHAU VIẾT NÊN THANH XUÂN</h2>
+                    <p>Một tập thể, một hành trình, hàng ngàn kỷ niệm đáng nhớ.</p>
+                    <span class="read-more">ĐỌC BÀI VIẾT ↗</span>
+                </div>
+            </article>
+
+            <div class="hero-side">
+                <article class="side-feature article-card"
+                    data-category="hoctap"
+                    data-title="Cùng nhau học tập và tiến bộ"
+                    data-image="images/news1.jpg"
+                    data-description="Những phương pháp học tập tích cực giúp các thành viên cùng tiến bộ.">
+                    <img src="images/news1.jpg" alt="Học tập">
+                    <div class="side-overlay">
+                        <span class="category">HỌC TẬP</span>
+                        <h3>Cùng nhau học tập và tiến bộ mỗi ngày</h3>
+                    </div>
+                </article>
+
+                <article class="side-feature article-card"
+                    data-category="hoatdong"
+                    data-title="Những hoạt động đáng nhớ"
+                    data-image="images/news2.jpg"
+                    data-description="Cùng nhìn lại các hoạt động tập thể và những khoảnh khắc đáng nhớ.">
+                    <img src="images/news2.jpg" alt="Hoạt động">
+                    <div class="side-overlay">
+                        <span class="category">HOẠT ĐỘNG</span>
+                        <h3>Những khoảnh khắc không thể quên</h3>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="container news-section" id="latest">
+        <div class="section-heading">
+            <div>
+                <span class="eyebrow">LATEST STORIES</span>
+                <h2>TIN TỨC <span>MỚI NHẤT</span></h2>
+            </div>
+            <span class="section-note">CẬP NHẬT TỪ 8/8 NEWS</span>
+        </div>
+
+        <div class="news-toolbar">
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">Tất cả</button>
+                <button class="filter-btn" data-filter="hoctap">Học tập</button>
+                <button class="filter-btn" data-filter="hoatdong">Hoạt động</button>
+                <button class="filter-btn" data-filter="thanhtich">Thành tích</button>
+            </div>
+
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Tìm kiếm tin tức...">
+                <button id="searchBtn">⌕</button>
+            </div>
+        </div>
+
+        <div class="news-grid" id="newsGrid">
+
+            <article class="news-card article-card reveal"
+                data-category="hoctap"
+                data-title="Bí quyết học tập hiệu quả"
+                data-image="images/news1.jpg"
+                data-description="Cùng chia sẻ những cách học tập hiệu quả, chủ động ôn luyện và hỗ trợ nhau trong học tập.">
+                <div class="news-image">
+                    <img src="images/news1.jpg" alt="Góc học tập">
+                    <span class="image-tag">HỌC TẬP</span>
+                </div>
+                <div class="news-content">
+                    <span class="date">GÓC HỌC TẬP</span>
+                    <h3>Bí quyết học tập hiệu quả và cùng nhau tiến bộ</h3>
+                    <p>Học hỏi, chia sẻ kiến thức và cùng xây dựng môi trường học tập tích cực.</p>
+                    <span class="read-more">ĐỌC TIẾP ↗</span>
+                </div>
+            </article>
+
+            <article class="news-card article-card reveal"
+                data-category="hoatdong"
+                data-title="Sôi nổi các hoạt động tập thể"
+                data-image="images/news2.jpg"
+                data-description="Các hoạt động tập thể mang đến cơ hội giao lưu, gắn kết và phát triển kỹ năng.">
+                <div class="news-image">
+                    <img src="images/news2.jpg" alt="Hoạt động lớp">
+                    <span class="image-tag">HOẠT ĐỘNG</span>
+                </div>
+                <div class="news-content">
+                    <span class="date">HOẠT ĐỘNG LỚP</span>
+                    <h3>Sôi nổi các hoạt động tập thể của lớp 8/8</h3>
+                    <p>Cùng nhau tham gia phong trào, tạo nên những dấu ấn đẹp.</p>
+                    <span class="read-more">ĐỌC TIẾP ↗</span>
+                </div>
+            </article>
+
+            <article class="news-card article-card reveal"
+                data-category="thanhtich"
+                data-title="Nỗ lực tạo nên thành tích"
+                data-image="images/news3.jpg"
+                data-description="Mỗi sự cố gắng đều đáng được ghi nhận. Cùng nhau phấn đấu để đạt những kết quả tốt hơn.">
+                <div class="news-image">
+                    <img src="images/news3.jpg" alt="Thành tích">
+                    <span class="image-tag">THÀNH TÍCH</span>
+                </div>
+                <div class="news-content">
+                    <span class="date">GƯƠNG SÁNG</span>
+                    <h3>Nỗ lực hôm nay, thành công ngày mai</h3>
+                    <p>Ghi nhận sự cố gắng và tinh thần vượt khó của các thành viên.</p>
+                    <span class="read-more">ĐỌC TIẾP ↗</span>
+                </div>
+            </article>
+
+            <article class="news-card article-card reveal"
+                data-category="hoatdong"
+                data-title="Thanh xuân dưới mái trường"
+                data-image="images/news4.jpg"
+                data-description="Những kỷ niệm dưới mái trường sẽ trở thành hành trang đẹp trên hành trình trưởng thành.">
+                <div class="news-image">
+                    <img src="images/news4.jpg" alt="Kỷ niệm">
+                    <span class="image-tag">KỶ NIỆM</span>
+                </div>
+                <div class="news-content">
+                    <span class="date">GÓC KỶ NIỆM</span>
+                    <h3>Thanh xuân dưới mái trường thân yêu</h3>
+                    <p>Mỗi khoảnh khắc đều góp phần tạo nên câu chuyện của chúng mình.</p>
+                    <span class="read-more">ĐỌC TIẾP ↗</span>
+                </div>
+            </article>
+
+            <article class="news-card article-card reveal"
+                data-category="hoctap"
+                data-title="Chia sẻ kiến thức cùng bạn bè"
+                data-image="images/news5.jpg"
+                data-description="Tinh thần hỗ trợ nhau trong học tập giúp tập thể ngày càng đoàn kết và tiến bộ.">
+                <div class="news-image">
+                    <img src="images/news5.jpg" alt="Chia sẻ kiến thức">
+                    <span class="image-tag">HỌC TẬP</span>
+                </div>
+                <div class="news-content">
+                    <span class="date">GÓC CHIA SẺ</span>
+                    <h3>Chia sẻ kiến thức, lan tỏa tinh thần tích cực</h3>
+                    <p>Cùng giúp đỡ nhau để mỗi ngày đến lớp đều có thêm điều mới.</p>
+                    <span class="read-more">ĐỌC TIẾP ↗</span>
+                </div>
+            </article>
+
+            <article class="news-card article-card reveal"
+                data-category="hoatdong"
+                data-title="Những sắc màu tuổi học trò"
+                data-image="images/news6.jpg"
+                data-description="Văn nghệ, thể thao và các hoạt động sáng tạo là những mảnh ghép của tuổi học trò.">
+                <div class="news-image">
+                    <img src="images/news6.jpg" alt="Tuổi học trò">
+                    <span class="image-tag">TUỔI HỌC TRÒ</span>
+                </div>
+                <div class="news-content">
+                    <span class="date">SẮC MÀU 8/8</span>
+                    <h3>Những sắc màu rực rỡ của tuổi học trò</h3>
+                    <p>Năng động, tự tin và sáng tạo trong mọi hoạt động.</p>
+                    <span class="read-more">ĐỌC TIẾP ↗</span>
+                </div>
+            </article>
+
+        </div>
+        <p class="no-result" id="noResult">Không tìm thấy bài viết phù hợp.</p>
+    </section>
+
+    <section class="study-banner" id="study">
+        <div class="container study-content">
+            <div>
+                <span class="eyebrow">LEARNING TOGETHER</span>
+                <h2>HỌC TẬP TỐT HƠN<br><span>KHI CHÚNG TA CÙNG NHAU</span></h2>
+                <p>Kiến thức được sẻ chia, tình bạn được vun đắp và mỗi ngày đều là một cơ hội để trưởng thành.</p>
+                <a href="#latest" class="primary-btn">KHÁM PHÁ TIN TỨC ↗</a>
+            </div>
+            <div class="study-decoration">8/8</div>
+        </div>
+    </section>
+
+    <section class="container gallery-section" id="gallery">
+        <div class="section-heading">
+            <div>
+                <span class="eyebrow">MEMORY ALBUM</span>
+                <h2>GÓC ẢNH <span>KỶ NIỆM</span></h2>
+            </div>
+            <span class="section-note">EVERY MOMENT MATTERS</span>
+        </div>
+
+        <div class="gallery-grid">
+            <img src="images/gallery1.jpg" alt="Kỷ niệm lớp 1" class="gallery-image">
+            <img src="images/gallery2.jpg" alt="Kỷ niệm lớp 2" class="gallery-image">
+            <img src="images/gallery3.jpg" alt="Kỷ niệm lớp 3" class="gallery-image">
+        </div>
+    </section>
+
+    <section class="container class-message">
+        <span class="eyebrow">OUR CLASS · OUR STORY</span>
+        <h2>MỘT TẬP THỂ.<br><span>MỘT THANH XUÂN.</span></h2>
+        <p>8/8 NEWS - Lưu giữ hôm nay, nhớ mãi ngày mai.</p>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container footer-content">
+        <div class="footer-brand">
+            <div class="brand-logo">8/8</div>
+            <div>
+                <h2>8/8</h2>
+                <p>TIN TỨC TRUYỀN THÔNG LỚP 8/8</p>
+            </div>
+        </div>
+        <p>Trường THCS Nguyễn Trãi · Đại Lộc, Quảng Nam</p>
+        <p>© 2026–2027 · Website tập thể lớp 8/8</p>
     </div>
-</section>
-
-<section class="section" id="memories">
-    <div class="section-heading">
-        <span>KỈ NIỆM · 2026</span>
-        <h2>Những mảnh ghép kỷ niệm</h2>
-        <p>Năm khoảnh khắc, năm câu chuyện, một tập thể.</p>
-    </div>
-
-    <div class="gallery">
-
-        <article class="gallery-card">
-            <img src="images/anh1.jpg" alt="Khoảnh khắc tập thể">
-            <div class="number">01 / TOGETHER</div>
-            <h3>Chúng ta của ngày ấy</h3>
-            <p>
-                Những khoảnh khắc cùng nhau quây quần, vui chơi và chia sẻ dưới mái trường thân yêu đã tạo nên những kỷ niệm thật đẹp.
-                Tiếng cười, những câu chuyện và sự gắn kết bạn bè sẽ mãi là ký ức đáng nhớ của tuổi học trò.
-            </p>
-        </article>
-
-        <article class="gallery-card">
-            <img src="images/anh2.jpg" alt="Khoảnh khắc học tập">
-            <div class="number">02 / LEARNING</div>
-            <h3>Những kỉ niệm đáng nhớ</h3>
-            <p>
-                Cùng nhau chuẩn bị và trang trí gian trưng bày, chúng em đã có những trải nghiệm thật ý nghĩa.
-                Mỗi món bánh, mỗi vật phẩm đều chứa đựng sự khéo léo, tinh thần đoàn kết và niềm tự hào về nét đẹp văn hóa truyền thống.
-            </p>
-        </article>
-
-        <article class="gallery-card">
-            <img src="images/anh3.jpg" alt="Hoạt động ngoại khóa">
-            <div class="number">03 / EXPERIENCE</div>
-            <h3>Hành trình trải nghiệm</h3>
-            <p>
-               Chương trình “Trung thu cho em” đã lưu giữ những khoảnh khắc vui tươi, rực rỡ bên thầy cô và bạn bè.
-                Những nụ cười, những bộ trang phục đầy sắc màu sẽ mãi là kỷ niệm đẹp của tuổi học trò hồn nhiên, trong sáng. ❤️
-            </p>
-        </article>
-
-        <article class="gallery-card">
-            <img src="images/anh4.jpg" alt="Hoạt động tập thể">
-            <div class="number">04 / TEAMWORK</div>
-            <h3>Nội quy của lớp học</h3>
-            <p>
-               Một tập thể đoàn kết được tạo nên từ sự sẻ chia và trách nhiệm của mỗi thành viên.
-                 Bảng phân công ban cán sự lớp 8/8 không chỉ ghi lại những gương mặt đầy nhiệt huyết mà còn là dấu ấn của một năm học mới với nhiều niềm tin và hy vọng.
-                Mong rằng mỗi bạn sẽ luôn phát huy tinh thần trách nhiệm, cùng nhau học tập, rèn luyện và xây dựng lớp 8/8 ngày càng đoàn kết, tự tin và tiến bộ. ❤️
-            </p>
-        </article>
-
-        <article class="gallery-card">
-            <img src="images/anh5.jpg" alt="Kỷ niệm cuối năm">
-            <div class="number">05 / FOREVER</div>
-            <h3>Thanh xuân còn mãi</h3>
-            <p>
-                Có những ngày đi học trôi qua thật nhẹ nhàng, nhưng lại để lại những ký ức sâu đậm nhất.
-                Bức ảnh này chính là một lát cắt nhỏ về tình bạn của chúng mình: chỉ có chiếc chiếu trải vội giữa phòng học, những mảnh giấy màu cắt dở, và trên hết là những nụ cười rạng rỡ, vô tư bên nhau.
-Mai này dẫu có đi xa, chỉ cần nhìn lại khoảnh khắc này, chúng mình sẽ nhớ về một thời học trò đã từng gắn kết và rực rỡ đến thế. Cảm ơn vì đã cùng nhau tạo nên một thanh xuân thật đẹp!
-            </p>
-        </article>
-
-    </div>
-</section>
-
-<section class="quote">
-    <span>“</span>
-    <h2>Điều đẹp nhất không phải là chúng ta đã đi bao xa, mà là đã đi cùng nhau như thế nào.</h2>
-    <p>OUR CLASS · OUR MEMORIES · OUR STORY</p>
-</section>
-
-<footer id="footer">
-    <h2>LỚP 8/8</h2>
-    <p>Một tập thể · Một hành trình · Ngàn kỷ niệm</p>
-    <p>© 2026 OUR CLASS</p>
 </footer>
 
-<div class="viewer" id="viewer">
-    <button class="close" id="closeViewer">×</button>
-    <img id="viewerImage" src="" alt="Ảnh phóng to">
+<div class="modal" id="articleModal">
+    <div class="modal-content">
+        <button class="modal-close" id="closeArticle">×</button>
+        <img id="modalImage" src="" alt="Ảnh bài viết">
+        <div class="modal-text">
+            <span class="eyebrow">8/8 NEWS · BÀI VIẾT</span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+        </div>
+    </div>
 </div>
 
-<script>
-const cards = document.querySelectorAll(".gallery-card");
+<div class="lightbox" id="lightbox">
+    <button id="closeLightbox">×</button>
+    <img id="lightboxImage" src="" alt="Ảnh phóng to">
+</div>
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-        }
-    });
-}, {
-    threshold: 0.15
-});
-
-cards.forEach((card) => {
-    observer.observe(card);
-});
-
-const viewer = document.getElementById("viewer");
-const viewerImage = document.getElementById("viewerImage");
-const closeViewer = document.getElementById("closeViewer");
-
-document.querySelectorAll(".gallery-card img").forEach((img) => {
-    img.addEventListener("click", () => {
-        viewerImage.src = img.src;
-        viewer.classList.add("active");
-    });
-});
-
-closeViewer.addEventListener("click", () => {
-    viewer.classList.remove("active");
-});
-
-viewer.addEventListener("click", (event) => {
-    if (event.target === viewer) {
-        viewer.classList.remove("active");
-    }
-});
-
-document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-        viewer.classList.remove("active");
-    }
-});
-</script>
-
+<script src="js/script.js"></script>
 </body>
- <section>
-    <h2>KẾ HOẠCH HOẠT ĐỘNG</h2>
-
-    <a href="https://docs.google.com/gview?embedded=1&url=https://giaphunguyenkhanh.github.io/lop88-36/Ke_Hoach_Thang_9_2026_Chi_Doi_8-8.docx" target="_blank">
-        XEM KẾ HOẠCH THÁNG 9
-    </a>
-
-    <a href="https://docs.google.com/gview?embedded=1&url=https://giaphunguyenkhanh.github.io/lop88-36/Ke_Hoach_Thang_10_2026_Chi_Doi_8-8.docx" target="_blank">
-        XEM KẾ HOẠCH THÁNG 10
-    </a>
-
-    <a href="https://docs.google.com/gview?embedded=1&url=https://giaphunguyenkhanh.github.io/lop88-36/Ke_Hoach_Thang_11_2026_Chi_Doi_8-8.docx" target="_blank">
-        XEM KẾ HOẠCH THÁNG 11
-    </a>
-</section>
 </html>
