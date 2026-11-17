@@ -4,302 +4,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Báo điện tử tập thể lớp 8/8">
-    <title>8/8 NEWS - Báo điện tử học đường</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Bản tin điện tử | Lớp 8/8</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <header class="header">
-    <div class="topbar">
-        <div class="container topbar-content">
-            <span id="currentDate">BÁO ĐIỆN TỬ HỌC ĐƯỜNG</span>
-            <span>ĐOÀN KẾT - TỰ TIN - SÁNG TẠO</span>
+    <div class="logo">
+        <div class="logo-icon">8/8</div>
+        <div>
+            <h2>LỚP 8/8</h2>
+            <span>BẢN TIN HỌC ĐƯỜNG</span>
         </div>
     </div>
 
-    <div class="container header-main">
-        <a href="#" class="brand">
-            <div class="brand-logo">8/8</div>
-            <div>
-                <h1>8/8 <span>NEWS</span></h1>
-                <p>THE CLASS JOURNAL</p>
-            </div>
-        </a>
+    <nav id="menu">
+        <a href="#home">Trang chủ</a>
+        <a href="#news">Tin tức</a>
+        <a href="#activities">Hoạt động</a>
+        <a href="#gallery">Thư viện ảnh</a>
+        <a href="#about">Giới thiệu</a>
+    </nav>
 
-        <button class="menu-toggle" id="menuToggle">☰</button>
-
-        <nav id="mainNav">
-            <a href="#home">TRANG CHỦ</a>
-            <a href="#latest">TIN MỚI</a>
-            <a href="#study">HỌC TẬP</a>
-            <a href="#activities">HOẠT ĐỘNG</a>
-            <a href="#gallery">THƯ VIỆN ẢNH</a>
-        </nav>
+    <div class="header-actions">
+        <button id="themeBtn">☾</button>
+        <button class="menu-btn" id="menuBtn">☰</button>
     </div>
 </header>
 
-<main id="home">
+<section class="hero" id="home">
+    <div class="hero-content">
+        <span class="tag">✦ BẢN TIN ĐẶC BIỆT</span>
+        <h1>THẾ GIỚI<br><span>8/8</span></h1>
+        <p>Nơi lưu giữ những khoảnh khắc, câu chuyện và hành trình tuyệt vời của tuổi học trò.</p>
+        <a href="#news" class="main-btn">KHÁM PHÁ NGAY ↗</a>
+    </div>
 
-    <div class="breaking">
-        <div class="container breaking-inner">
-            <span class="breaking-label">TIN NỔI BẬT</span>
-            <div class="breaking-track">
-                <span>Chào mừng bạn đến với 8/8 NEWS - Nơi lưu giữ những câu chuyện của chúng mình!</span>
+    <div class="hero-image">
+        <img src="images/banner.jpg" alt="Tập thể lớp 8/8">
+        <div class="image-label">MEMORIES • FRIENDSHIP • YOUTH</div>
+    </div>
+
+    <div class="hero-number">08</div>
+</section>
+
+<div class="ticker">
+    <span>BREAKING NEWS</span>
+    <div>CHÀO MỪNG ĐẾN VỚI BẢN TIN ĐIỆN TỬ LỚP 8/8 ✦ THANH XUÂN LÀ NHỮNG ĐIỀU ĐẸP NHẤT ✦</div>
+</div>
+
+<section class="section" id="news">
+    <div class="section-heading">
+        <div>
+            <span class="sub-title">CẬP NHẬT MỚI NHẤT</span>
+            <h2>TIN TỨC <span>NỔI BẬT</span></h2>
+        </div>
+        <p>Những thông tin đáng chú ý trong lớp và nhà trường.</p>
+    </div>
+
+    <div class="news-grid">
+        <article class="news-card large reveal">
+            <img src="images/lop-hoc.jpg" alt="Tập thể lớp">
+            <div class="news-info">
+                <span class="category">TIN LỚP HỌC</span>
+                <h3>8/8 – Một tập thể, một hành trình, ngàn kỷ niệm</h3>
+                <p>Cùng nhìn lại những khoảnh khắc đáng nhớ của tập thể lớp 8/8.</p>
+                <a href="#about">ĐỌC THÊM ↗</a>
             </div>
+        </article>
+
+        <article class="news-card reveal">
+            <img src="images/hoat-dong.jpg" alt="Hoạt động lớp">
+            <div class="news-info">
+                <span class="category">HOẠT ĐỘNG</span>
+                <h3>Những hoạt động đáng nhớ</h3>
+                <p>Học tập, trải nghiệm và cùng nhau trưởng thành.</p>
+                <a href="#activities">ĐỌC THÊM ↗</a>
+            </div>
+        </article>
+
+        <article class="news-card reveal">
+            <img src="images/van-nghe.jpg" alt="Văn nghệ">
+            <div class="news-info">
+                <span class="category">SỰ KIỆN</span>
+                <h3>Sắc màu tuổi học trò</h3>
+                <p>Những khoảnh khắc vui tươi dưới mái trường thân yêu.</p>
+                <a href="#gallery">ĐỌC THÊM ↗</a>
+            </div>
+        </article>
+    </div>
+</section>
+
+<section class="activity-section" id="activities">
+    <div class="section-heading">
+        <div>
+            <span class="sub-title">DẤU ẤN THANH XUÂN</span>
+            <h2>HOẠT ĐỘNG <span>NỔI BẬT</span></h2>
         </div>
     </div>
 
-    <section class="container hero-section">
-        <div class="section-heading">
-            <div>
-                <span class="eyebrow">WELCOME TO 8/8 NEWS</span>
-                <h2>TIN TỨC <span>HỌC ĐƯỜNG</span></h2>
-            </div>
-            <span class="edition">ẤN PHẨM ĐẶC BIỆT · 2026</span>
+    <div class="activity-grid">
+        <div class="activity-box reveal">
+            <div class="activity-icon">✦</div>
+            <h3>HỌC TẬP</h3>
+            <p>Không ngừng nỗ lực, cùng nhau chinh phục tri thức.</p>
         </div>
 
-        <div class="hero-grid">
-            <article class="hero-main article-card"
-                data-category="hoatdong"
-                data-title="Chào mừng đến với ngôi nhà chung 8/8"
-                data-image="images/banner.jpg"
-                data-description="Nơi lưu giữ những khoảnh khắc đáng nhớ, những hoạt động sôi nổi và hành trình trưởng thành của tập thể lớp 8/8.">
-                <img src="images/banner.jpg" alt="Tập thể lớp 8/8">
-                <div class="hero-overlay">
-                    <span class="category">TIN ĐẶC BIỆT</span>
-                    <h2>8/8 NEWS - CÙNG NHAU VIẾT NÊN THANH XUÂN</h2>
-                    <p>Một tập thể, một hành trình, hàng ngàn kỷ niệm đáng nhớ.</p>
-                    <span class="read-more">ĐỌC BÀI VIẾT ↗</span>
-                </div>
-            </article>
-
-            <div class="hero-side">
-                <article class="side-feature article-card"
-                    data-category="hoctap"
-                    data-title="Cùng nhau học tập và tiến bộ"
-                    data-image="images/news1.jpg"
-                    data-description="Những phương pháp học tập tích cực giúp các thành viên cùng tiến bộ.">
-                    <img src="images/news1.jpg" alt="Học tập">
-                    <div class="side-overlay">
-                        <span class="category">HỌC TẬP</span>
-                        <h3>Cùng nhau học tập và tiến bộ mỗi ngày</h3>
-                    </div>
-                </article>
-
-                <article class="side-feature article-card"
-                    data-category="hoatdong"
-                    data-title="Những hoạt động đáng nhớ"
-                    data-image="images/news2.jpg"
-                    data-description="Cùng nhìn lại các hoạt động tập thể và những khoảnh khắc đáng nhớ.">
-                    <img src="images/news2.jpg" alt="Hoạt động">
-                    <div class="side-overlay">
-                        <span class="category">HOẠT ĐỘNG</span>
-                        <h3>Những khoảnh khắc không thể quên</h3>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <section class="container news-section" id="latest">
-        <div class="section-heading">
-            <div>
-                <span class="eyebrow">LATEST STORIES</span>
-                <h2>TIN TỨC <span>MỚI NHẤT</span></h2>
-            </div>
-            <span class="section-note">CẬP NHẬT TỪ 8/8 NEWS</span>
+        <div class="activity-box reveal">
+            <div class="activity-icon">✧</div>
+            <h3>PHONG TRÀO</h3>
+            <p>Năng động, sáng tạo và nhiệt huyết trong mọi hoạt động.</p>
         </div>
 
-        <div class="news-toolbar">
-            <div class="filters">
-                <button class="filter-btn active" data-filter="all">Tất cả</button>
-                <button class="filter-btn" data-filter="hoctap">Học tập</button>
-                <button class="filter-btn" data-filter="hoatdong">Hoạt động</button>
-                <button class="filter-btn" data-filter="thanhtich">Thành tích</button>
-            </div>
-
-            <div class="search-box">
-                <input type="text" id="searchInput" placeholder="Tìm kiếm tin tức...">
-                <button id="searchBtn">⌕</button>
-            </div>
+        <div class="activity-box reveal">
+            <div class="activity-icon">♡</div>
+            <h3>TÌNH BẠN</h3>
+            <p>Cùng sẻ chia, đoàn kết và tạo nên những kỷ niệm đẹp.</p>
         </div>
+    </div>
+</section>
 
-        <div class="news-grid" id="newsGrid">
-
-            <article class="news-card article-card reveal"
-                data-category="hoctap"
-                data-title="Bí quyết học tập hiệu quả"
-                data-image="images/news1.jpg"
-                data-description="Cùng chia sẻ những cách học tập hiệu quả, chủ động ôn luyện và hỗ trợ nhau trong học tập.">
-                <div class="news-image">
-                    <img src="images/news1.jpg" alt="Góc học tập">
-                    <span class="image-tag">HỌC TẬP</span>
-                </div>
-                <div class="news-content">
-                    <span class="date">GÓC HỌC TẬP</span>
-                    <h3>Bí quyết học tập hiệu quả và cùng nhau tiến bộ</h3>
-                    <p>Học hỏi, chia sẻ kiến thức và cùng xây dựng môi trường học tập tích cực.</p>
-                    <span class="read-more">ĐỌC TIẾP ↗</span>
-                </div>
-            </article>
-
-            <article class="news-card article-card reveal"
-                data-category="hoatdong"
-                data-title="Sôi nổi các hoạt động tập thể"
-                data-image="images/news2.jpg"
-                data-description="Các hoạt động tập thể mang đến cơ hội giao lưu, gắn kết và phát triển kỹ năng.">
-                <div class="news-image">
-                    <img src="images/news2.jpg" alt="Hoạt động lớp">
-                    <span class="image-tag">HOẠT ĐỘNG</span>
-                </div>
-                <div class="news-content">
-                    <span class="date">HOẠT ĐỘNG LỚP</span>
-                    <h3>Sôi nổi các hoạt động tập thể của lớp 8/8</h3>
-                    <p>Cùng nhau tham gia phong trào, tạo nên những dấu ấn đẹp.</p>
-                    <span class="read-more">ĐỌC TIẾP ↗</span>
-                </div>
-            </article>
-
-            <article class="news-card article-card reveal"
-                data-category="thanhtich"
-                data-title="Nỗ lực tạo nên thành tích"
-                data-image="images/news3.jpg"
-                data-description="Mỗi sự cố gắng đều đáng được ghi nhận. Cùng nhau phấn đấu để đạt những kết quả tốt hơn.">
-                <div class="news-image">
-                    <img src="images/news3.jpg" alt="Thành tích">
-                    <span class="image-tag">THÀNH TÍCH</span>
-                </div>
-                <div class="news-content">
-                    <span class="date">GƯƠNG SÁNG</span>
-                    <h3>Nỗ lực hôm nay, thành công ngày mai</h3>
-                    <p>Ghi nhận sự cố gắng và tinh thần vượt khó của các thành viên.</p>
-                    <span class="read-more">ĐỌC TIẾP ↗</span>
-                </div>
-            </article>
-
-            <article class="news-card article-card reveal"
-                data-category="hoatdong"
-                data-title="Thanh xuân dưới mái trường"
-                data-image="images/news4.jpg"
-                data-description="Những kỷ niệm dưới mái trường sẽ trở thành hành trang đẹp trên hành trình trưởng thành.">
-                <div class="news-image">
-                    <img src="images/news4.jpg" alt="Kỷ niệm">
-                    <span class="image-tag">KỶ NIỆM</span>
-                </div>
-                <div class="news-content">
-                    <span class="date">GÓC KỶ NIỆM</span>
-                    <h3>Thanh xuân dưới mái trường thân yêu</h3>
-                    <p>Mỗi khoảnh khắc đều góp phần tạo nên câu chuyện của chúng mình.</p>
-                    <span class="read-more">ĐỌC TIẾP ↗</span>
-                </div>
-            </article>
-
-            <article class="news-card article-card reveal"
-                data-category="hoctap"
-                data-title="Chia sẻ kiến thức cùng bạn bè"
-                data-image="images/news5.jpg"
-                data-description="Tinh thần hỗ trợ nhau trong học tập giúp tập thể ngày càng đoàn kết và tiến bộ.">
-                <div class="news-image">
-                    <img src="images/news5.jpg" alt="Chia sẻ kiến thức">
-                    <span class="image-tag">HỌC TẬP</span>
-                </div>
-                <div class="news-content">
-                    <span class="date">GÓC CHIA SẺ</span>
-                    <h3>Chia sẻ kiến thức, lan tỏa tinh thần tích cực</h3>
-                    <p>Cùng giúp đỡ nhau để mỗi ngày đến lớp đều có thêm điều mới.</p>
-                    <span class="read-more">ĐỌC TIẾP ↗</span>
-                </div>
-            </article>
-
-            <article class="news-card article-card reveal"
-                data-category="hoatdong"
-                data-title="Những sắc màu tuổi học trò"
-                data-image="images/news6.jpg"
-                data-description="Văn nghệ, thể thao và các hoạt động sáng tạo là những mảnh ghép của tuổi học trò.">
-                <div class="news-image">
-                    <img src="images/news6.jpg" alt="Tuổi học trò">
-                    <span class="image-tag">TUỔI HỌC TRÒ</span>
-                </div>
-                <div class="news-content">
-                    <span class="date">SẮC MÀU 8/8</span>
-                    <h3>Những sắc màu rực rỡ của tuổi học trò</h3>
-                    <p>Năng động, tự tin và sáng tạo trong mọi hoạt động.</p>
-                    <span class="read-more">ĐỌC TIẾP ↗</span>
-                </div>
-            </article>
-
+<section class="section gallery-section" id="gallery">
+    <div class="section-heading">
+        <div>
+            <span class="sub-title">ALBUM KỶ NIỆM</span>
+            <h2>THƯ VIỆN <span>ẢNH</span></h2>
         </div>
-        <p class="no-result" id="noResult">Không tìm thấy bài viết phù hợp.</p>
-    </section>
+        <p>Mỗi bức ảnh là một câu chuyện.</p>
+    </div>
 
-    <section class="study-banner" id="study">
-        <div class="container study-content">
-            <div>
-                <span class="eyebrow">LEARNING TOGETHER</span>
-                <h2>HỌC TẬP TỐT HƠN<br><span>KHI CHÚNG TA CÙNG NHAU</span></h2>
-                <p>Kiến thức được sẻ chia, tình bạn được vun đắp và mỗi ngày đều là một cơ hội để trưởng thành.</p>
-                <a href="#latest" class="primary-btn">KHÁM PHÁ TIN TỨC ↗</a>
-            </div>
-            <div class="study-decoration">8/8</div>
-        </div>
-    </section>
+    <div class="gallery-grid">
+        <img src="images/lop-hoc.jpg" alt="Ảnh lớp">
+        <img src="images/hoat-dong.jpg" alt="Hoạt động">
+        <img src="images/van-nghe.jpg" alt="Văn nghệ">
+        <img src="images/banner.jpg" alt="Kỷ niệm">
+    </div>
+</section>
 
-    <section class="container gallery-section" id="gallery">
-        <div class="section-heading">
-            <div>
-                <span class="eyebrow">MEMORY ALBUM</span>
-                <h2>GÓC ẢNH <span>KỶ NIỆM</span></h2>
-            </div>
-            <span class="section-note">EVERY MOMENT MATTERS</span>
-        </div>
-
-        <div class="gallery-grid">
-            <img src="images/gallery1.jpg" alt="Kỷ niệm lớp 1" class="gallery-image">
-            <img src="images/gallery2.jpg" alt="Kỷ niệm lớp 2" class="gallery-image">
-            <img src="images/gallery3.jpg" alt="Kỷ niệm lớp 3" class="gallery-image">
-        </div>
-    </section>
-
-    <section class="container class-message">
-        <span class="eyebrow">OUR CLASS · OUR STORY</span>
-        <h2>MỘT TẬP THỂ.<br><span>MỘT THANH XUÂN.</span></h2>
-        <p>8/8 NEWS - Lưu giữ hôm nay, nhớ mãi ngày mai.</p>
-    </section>
-
-</main>
+<section class="about" id="about">
+    <div class="about-content">
+        <span class="sub-title">OUR CLASS • OUR STORY</span>
+        <h2>CHÚNG TÔI LÀ<br><span>8/8</span></h2>
+        <p>Một tập thể nhỏ với những ước mơ lớn. Mỗi thành viên là một màu sắc riêng, cùng tạo nên bức tranh thanh xuân rực rỡ dưới mái trường.</p>
+        <a href="#home" class="main-btn">TRỞ VỀ ĐẦU TRANG ↑</a>
+    </div>
+    <div class="about-decoration">8/8</div>
+</section>
 
 <footer>
-    <div class="container footer-content">
-        <div class="footer-brand">
-            <div class="brand-logo">8/8</div>
-            <div>
-                <h2>8/8</h2>
-                <p>TIN TỨC TRUYỀN THÔNG LỚP 8/8</p>
-            </div>
-        </div>
-        <p>Trường THCS Nguyễn Trãi · Đại Lộc, Quảng Nam</p>
-        <p>© 2026–2027 · Website tập thể lớp 8/8</p>
-    </div>
+    <div class="footer-logo">8/8</div>
+    <h3>BẢN TIN ĐIỆN TỬ LỚP 8/8</h3>
+    <p>Thanh xuân lưu giữ bằng những điều giản dị nhất.</p>
+    <span>© 2026 • CLASS 8/8 • ALL RIGHTS RESERVED</span>
 </footer>
 
-<div class="modal" id="articleModal">
-    <div class="modal-content">
-        <button class="modal-close" id="closeArticle">×</button>
-        <img id="modalImage" src="" alt="Ảnh bài viết">
-        <div class="modal-text">
-            <span class="eyebrow">8/8 NEWS · BÀI VIẾT</span>
-            <h2 id="modalTitle"></h2>
-            <p id="modalDescription"></p>
-        </div>
-    </div>
-</div>
-
-<div class="lightbox" id="lightbox">
-    <button id="closeLightbox">×</button>
-    <img id="lightboxImage" src="" alt="Ảnh phóng to">
-</div>
-
-<script src="js/script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
